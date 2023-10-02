@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*************
+  FONT
+  ********************/
+  @font-face {
+    font-family: 'FuturaExtended';
+    src: url('../fonts/FuturaExtended.eot');
+    src: url('../fonts/?#iefix') format('embedded-opentype'),
+        url('../fonts/FuturaExtended.woff2') format('woff2'),
+        url('../fonts/FuturaExtended.woff') format('woff'),
+        url('../fonts/FuturaExtended.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brannboll Fet';
+    src: url('../fonts/BrannbollFet.eot');
+    src: url('../fonts/BrannbollFet.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/BrannbollFet.woff2') format('woff2'),
+        url('../fonts/BrannbollFet.woff') format('woff'),
+        url('../fonts/BrannbollFet.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+  /**** header **********************/
+header{
+    height: 100vh;/* 100 Viewport Height = toute la hauteur de l'écran*/
+    background: url("../images/fond.jpg") bottom right; /*vélo à droite*/
+    background-size: cover; /*j'occupe tt l'escpace et je rogne tt ce qui depasse*/
+    display: flex; /*pour centrer ma div*/
+    justify-content: center;/* répartition sur la largeur*/
+    align-items: center; /* repartition sur la hauteur*/
+    }
+
+header nav{
+    position: fixed; /*ça bloque la navigation au scroll*/
+    top:50%; /* positionnement en hauteur de a nav*/
+    left: 5%;
+    }
+
+header nav ul{
+    list-style: none;/*enlève les puces de la liste*/
+    }
+
+header nav ul li{
+    margin : 0 20px;/*ajoute des marges a gauche et a droite de la li*/
+    padding: 10px 0;
+    text-shadow: 0px 0px 4px black; /* decalage x décalage y et le flou et couleur*/
+
+    }
+
+header nav ul li:first-of-type{ /*pour selectioner le premier element de la liste*/
+
+    border-bottom: 3px solid white;  /*epaisseur style solid et couleur*/
+    }
+
+
+header nav ul li a {
+    font-family: 'FuturaExtended';
+    font-size: 30px;
+    text-decoration:none; /*enlève le soulignement*/
+    color: white; /*change la couleur du texte*/
+    font-weight:bold;/*change la graisse de la typo*/
+    text-transform: uppercase;/* passe le texte en majuscule*/
+    font-weight: bold;
+    }
+
+header div {
+    width: 250px; /*largeur de la div*/
+    height: 250px; /*hauteur de la div*/
+    background-color: black; /*fond de couleur*/
+    border-radius: 50%; /*pour arrondir les angles*/
+    display: flex;  /*la contenu devient flexible pour centrer la div*/
+    justify-content: center; /*repartition su la largeur*/
+    align-items: center; /*repartition sur la hauteur*/
+    
+        
+    }
+
+header h1 {
+        font-family: 'Brannboll Fet';
+        font-size: 50px;
+        color: white; 
+        text-align: center;
+        line-height: 75px; /* la hauteur de la lgne (interlignage)*/
+        
+    }
+
+header h1::first-letter{
+    text-transform: uppercase;
+   }
+
+    /*********************fin header***************************/
+main {
+    background: black;
+    padding: 100px 0;/*ajoute du rembourrage (marge interne) à la section*/
+    display: flex;
+    justify-content: flex-end;/* permet de centrer les div enfant*/
+
+}
+section{
+    width: 70%;
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap; 
+    }
+
+section div{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 25px;
+}
+
+section>div>img
+    {
+    width: 100%; 
+  
+    }
+
+footer{
+    background: red;
+    color: white;
+   text-align: center;
+}
+    
