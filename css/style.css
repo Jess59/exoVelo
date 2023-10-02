@@ -3,6 +3,10 @@
     padding: 0;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   /*************
   FONT
   ********************/
@@ -45,6 +49,8 @@ header nav{
     position: fixed; /*ça bloque la navigation au scroll*/
     top:50%; /* positionnement en hauteur de a nav*/
     left: 5%;
+    transform: translateY(-50%);/*permet de remonter de 50% de la taille de l'élément pour le centrer 
+    parfaitement sur la hauteur*/
     }
 
 header nav ul{
@@ -86,7 +92,7 @@ header div {
         
     }
 
-header h1 {
+header div h1 {
         font-family: 'Brannboll Fet';
         font-size: 50px;
         color: white; 
@@ -100,37 +106,62 @@ header h1::first-letter{
    }
 
     /*********************fin header***************************/
+
 main {
-    background: black;
+    display: flex; /*pour que la section se place à droite*/
+    justify-content: flex-end;/* ça va à droit*/
+    background:#333;
+     }
+
+main section{/*ma section*/
+    width: 70%;  /*largeur de la section*/
     padding: 100px 0;/*ajoute du rembourrage (marge interne) à la section*/
     display: flex;
-    justify-content: flex-end;/* permet de centrer les div enfant*/
-
-}
-section{
-    width: 70%;
-    display: flex;
-    align-items: center; 
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    
     }
 
-section div{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+main section>div{ /*pour mes divs de premier niveau*/
     overflow: hidden;
+    position: relative;
+    cursor: pointer;
     margin: 25px;
-}
-
-section>div>img
-    {
-    width: 100%; 
-  
+    }
+main section div{ /*pour touts mes div*/
+    width: 200px; /*largeur de la div*/
+    height: 200px; /*hauteur de la div*/
+    border-radius: 50%;
+    }
+main section div img {
+    width: 100%; /*fait 100%*/
+    opacity: 0.7;
+    transition: 0.5s;/*la transition se met su l'élement qui s'anime*/
     }
 
+main section>div>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);/*couleur de fond avec une transparence*/
+    transform: scale(0.85);/* permet la réduction parv le centre*/
+    transition: 0.5s;/*la transition se met su l'élement qui s'anime*/
+}
+
+main>section>div:hover div{/*hover sur le parent pour atteindre l'enfant*/
+ transform: scale(0);/*va creer une reduction*/
+}
+
+main section>div:hover img{/*hover sur le parent pour atteindre l'enfant*/
+    transform: scale(1.2);/*va creer un agrandissement*/
+}
 footer{
-    background: red;
-    color: white;
-   text-align: center;
+    height: 300px;
+    background: #999;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Brannboll Fet';
+   color: white;
+   font-size: 20px;
 }
     
